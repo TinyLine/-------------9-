@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Стилі для форми */
+.form {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+/* Стилі для полів введення */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Стилі для кнопки */
+input[type="submit"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Стилі для кнопки при наведенні */
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
