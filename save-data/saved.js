@@ -1,19 +1,16 @@
-// Функція для зберігання контактів в localStorage
 function saveContacts(contacts) {
     localStorage.setItem('contacts', JSON.stringify(contacts));
 }
 
-// Функція для отримання контактів з localStorage
 function getContacts() {
     return JSON.parse(localStorage.getItem('contacts')) || [];
 }
 
-// Функція для відображення контактів у списку
 function displayContacts() {
     const contacts = getContacts();
     const contactDisplay = document.getElementById('contactDisplay');
 
-    contactDisplay.innerHTML = ''; // Очищаємо список
+    contactDisplay.innerHTML = '';
 
     contacts.forEach((contact, index) => {
         const li = document.createElement('li');
@@ -28,7 +25,6 @@ function displayContacts() {
     });
 }
 
-// Функція для видалення контакту
 function deleteContact(index) {
     const contacts = getContacts();
     contacts.splice(index, 1);
@@ -36,26 +32,21 @@ function deleteContact(index) {
     displayContacts();
 }
 
-// Функція для редагування контакту
 function editContact(index) {
     const contacts = getContacts();
     const contact = contacts[index];
 
-    // Заповнюємо форму поточними даними
     document.getElementById('inputFirstName').value = contact.firstName;
     document.getElementById('inputLastName').value = contact.lastName;
     document.getElementById('inputPhone').value = contact.phone;
     document.getElementById('inputEmail').value = contact.email;
 
-    // Видаляємо редагований контакт
     contacts.splice(index, 1);
     saveContacts(contacts);
 
-    // Оновлюємо список контактів
     displayContacts();
 }
 
-// Функція для додавання нового контакту
 document.getElementById('addContactForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -75,12 +66,9 @@ document.getElementById('addContactForm').addEventListener('submit', function(ev
     contacts.push(newContact);
     saveContacts(contacts);
 
-    // Очищаємо форму
     event.target.reset();
 
-    // Оновлюємо список контактів
     displayContacts();
 });
 
-// Відображаємо початковий список контактів
 displayContacts();

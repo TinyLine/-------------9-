@@ -6,7 +6,6 @@ body {
     margin: 0;
 }
 
-/* Стилі для форми */
 .form {
     width: 300px;
     padding: 20px;
@@ -17,7 +16,6 @@ body {
     margin-left: 50px;
 }
 
-/* Стилі для полів введення */
 input[type="text"], input[type="email"], input[type="password"] {
     width: calc(100% - 20px);
     padding: 10px;
@@ -26,7 +24,7 @@ input[type="text"], input[type="email"], input[type="password"] {
     border-radius: 3px;
 }
 
-/* Стилі для кнопки */
+
 input[type="submit"] {
     width: calc(100% - 20px);
     padding: 10px;
@@ -37,7 +35,7 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-/* Стилі для кнопки при наведенні */
+
 input[type="submit"]:hover {
     background-color: #45a049;
 }

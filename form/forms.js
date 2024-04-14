@@ -2,13 +2,11 @@ function saveToLocalStorage(key, data) {
     localStorage.setItem(key, JSON.stringify(data));
 }
 
-// Функція для зчитування даних з localStorage та встановлення їх у поля вводу
 function loadFromLocalStorage() {
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
-    
-    // Перевірка, чи існують дані в localStorage
+
     if (localStorage.getItem('name')) {
         nameInput.value = JSON.parse(localStorage.getItem('name'));
     }
@@ -20,7 +18,6 @@ function loadFromLocalStorage() {
     }
 }
 
-// Функція для перевірки входу
 function login() {
     const loginEmail = document.getElementById('loginEmail').value;
     const loginPassword = document.getElementById('loginPassword').value;
@@ -35,13 +32,11 @@ function login() {
     }
 }
 
-// Виклик функції при завантаженні сторінки
 window.onload = function() {
     loadFromLocalStorage();
     
-    // Додаємо обробник подій для форми реєстрації, щоб зберегти дані при її відправці
     document.getElementById('myForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Попереджуємо дефолтну поведінку форми
+        event.preventDefault(); 
         
         const nameValue = document.getElementById('name').value;
         const emailValue = document.getElementById('email').value;
@@ -53,10 +48,9 @@ window.onload = function() {
         
         alert('Дані збережено в localStorage!');
     });
-    
-    // Додаємо обробник подій для форми входу
+
     document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Попереджуємо дефолтну поведінку форми
+        event.preventDefault(); 
         
         login();
     });
