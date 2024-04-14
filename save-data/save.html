@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Контактний список</title>
+    <link rel="stylesheet" href="saves.css">
+</head>
+<body>
+
+<h1>Контактний список</h1>
+
+<!-- Форма для додавання контактів -->
+<form id="addContactForm">
+    <input type="text" id="inputFirstName" placeholder="Ім'я" required>
+    <input type="text" id="inputLastName" placeholder="Прізвище" required>
+    <input type="tel" id="inputPhone" placeholder="Телефон" required>
+    <input type="email" id="inputEmail" placeholder="Електронна адреса" required>
+    <button type="submit">Додати контакт</button>
+</form>
+
+<!-- Список контактів -->
+<ul id="contactDisplay"></ul>
+<script type="module" src="./saved.js"></script>
+</body>
+</html>
